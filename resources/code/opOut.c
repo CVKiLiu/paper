@@ -1,0 +1,3 @@
+struct opOut{
+    int a;
+};

@@ -1,0 +1,15 @@
+客户端自动升级配置步骤：
+
+注意：客户端exe文件名称不能随意修改，修改了文件名成自动升级会失效！！！！可以在定制打包时告诉我exe文件名
+
+将本压缩包内的 exe文件和压缩包内files目录下的sum 文件 全部上传放在升级服务器的
+/srun3/web/files 目录，exe和sum文件都要放在此目录
+
+网关认证：就放在网关设备 /srun3/web/files
+portal/ipoe认证 放在 portal服务器的  /srun3/web/files
+pppoe认证：放在radius server 的 /srun3/web/files
+
+如果需要强制升级，即不让用户选择，修改服务器上的sum文件，文件里面的 ;NForceUpdate;  修改为;ForceUpdate; 即可
+或者在本地修改上传到服务器上files 目录
+
+如果后台设置了强制升级，测试新版本时会自动强制升级导致无法测试新版本时，请将新版本压缩包里面的testver_SRun3K.exe_chksum.sum 文件上传的服务器，测试的新版本就不会被强制更新。
